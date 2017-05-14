@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder {
       'surname' => 'Wick',
       'email' => 'member@example.com',
       'password' => Hash::make('member'),
-      'member' => 1
+      'is_member' => 1
     ));
   }
 
