@@ -1,0 +1,19 @@
+
+// Highlighting - site
+
+::-webkit-selection {
+ background: $color-primary;
+ color: $color-white;
+}
+
+::-moz-selection {
+ background: $color-primary;
+ color: $color-white;
+}
+
+::selection { 
+ background: $color-primary;
+ color: $color-white;
+}
+
+:focus {outline:none;}

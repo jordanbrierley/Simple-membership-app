@@ -1,0 +1,41 @@
+//forms
+.fieldset{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.form-group{
+	position: relative;
+	display: block;
+}
+
+label{
+	/*font-weight: $font-base-weight-heavy;*/
+	display: block;
+	margin-bottom: 10px;
+	width: 100%;
+
+	.required{
+		color: $color-secondary;
+		margin-right: 4px;
+	}
+}
+
+.form-title{
+	padding: 1% 0 1% 0 ;
+}
+
+.form-group{
+	padding: 0 0 1em 0;
+
+	.error__text{
+		color: $color-negative;
+		font-size: 0.9em;
+		font-weight: 700;
+	}
+}
+
+.button-group{
+	margin-top: 30px;
+	text-align: right;
+}

@@ -1,0 +1,64 @@
+// standard alert styles
+.alert{
+	max-width: 600px;
+	position: relative;
+	background: $color-warning;
+	color: darken($color-warning, 50%);
+	padding: 15px;
+	display: block;
+	margin: 0 auto 1.2em;
+	border-radius: 2px;
+
+	ul{
+		@include zero-list;
+	}
+
+	li{
+		margin: 0;
+	}
+
+}
+.alert__close{
+	width: 20px;
+	height: 20px;
+	float: right;
+	position: relative;
+	cursor: pointer;
+
+	&:before,
+	&:after{
+		content: "";
+		width: 100%;
+		height: 2px;
+		background: inherit;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background: $color-secondary;
+	}
+	&:before{
+		transform: rotate(45deg);
+	}
+	&:after{
+		transform: rotate(-45deg);
+	}	
+}
+
+.alert--success{
+	background: $color-positive;
+	color: darken($color-positive, 50%);
+
+	a{
+		color: darken($color-positive, 30%)
+	}
+}
+.alert--error{
+	background: $color-negative;
+	color: darken($color-negative, 45%);
+
+	a{
+		color: darken($color-negative, 30%)
+	}
+}

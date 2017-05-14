@@ -1,0 +1,43 @@
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+input[type="search"], 
+input[type="tel"],
+input[type="date"], 
+select, 
+textarea {
+	border: 1px solid $color-neutral;
+	padding: 15px 15px;
+	background: $color-white;
+	width: 100%;
+	color: $color-text;
+	@include border-radius(50px);
+
+
+    &.no-display{
+    	display: none;
+    }
+
+	&:disabled{
+		background: $color-tertiary;
+		border-color: $color-tertiary;
+	}
+}
+
+input[type="radio"]{
+	margin-bottom: 20px;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+	+label{
+		display: inline-block;
+	}
+}
+
+textarea{
+	min-height:150px;
+}
+

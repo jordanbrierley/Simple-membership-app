@@ -1,0 +1,63 @@
+// Headers
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.2em;
+	margin: 0 0 .5em 0;
+	font-weight: normal;
+	color: $color-secondary;
+}
+
+h1, 
+.h1 {
+	@include font-size(30px);
+	font-family: $font-heading-family;
+	font-weight: $font-heading-weight;
+	margin-bottom: 0.62em;
+
+	@include medium-large {
+		@include font-size(40px);
+	}
+}
+
+h2, 
+.h2 {
+	@include font-size(24px);
+	font-family: $font-heading-family;
+	font-weight: $font-heading-weight-heavy;
+	margin-bottom: 0.31rem;
+	color: $color-primary;
+
+	@include medium-large {
+		@include font-size(30px);
+	}
+}
+
+h3,
+.h3 {
+	@include font-size(18px);
+	font-family: $font-base-family;
+	font-weight: $font-heading-weight-heavy;
+	margin-bottom: 0.31rem;
+
+	@include medium-large {
+		@include font-size(20px);
+	}
+}
+
+h4 {
+	@include font-size(16px);
+	font-weight: $font-heading-weight-heavy;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+h6 {
+	font-size: 0.833em;
+}

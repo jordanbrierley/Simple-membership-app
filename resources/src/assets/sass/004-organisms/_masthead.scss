@@ -1,0 +1,36 @@
+.masthead{
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 15px;
+  /*background: linear-gradient(rgba($color-black, 0.5), rgba($color-black, 0));*/
+  background: $color-white;
+  box-shadow: $box-shadow;
+
+  a{
+    color: $color-secondary;
+  }
+}
+.masthead__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.masthead__logo{
+  flex: 0 0 34px;
+
+  img{
+    height: auto;
+  } 
+}
+.masthead__nav{
+  flex: 1 1 auto;
+  text-align: right;
+}
+
+@include small-medium{
+  .masthead{
+    padding: 20px 15px;
+  }
+
+}

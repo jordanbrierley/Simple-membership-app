@@ -1,0 +1,137 @@
+
+// Site
+// =============================================================================
+
+// Breakpoints, based on a 16px base font size
+
+$smallest 			: 20em;		// 320px
+$smallest-small		: 25em;		// 400px
+$small				: 30em;		// 480px
+$small-medium		: 39em;		// 624px
+$medium 			: 48em;		// 768px
+$medium-large		: 56em;		// 896px
+$large 				: 64em;		// 1024px
+$large-max			: 71em;		// 1132px
+$max				: 78em;		// 1240px
+$super-max			: 78em;		// 1440px
+
+@mixin smallest {
+
+	@media screen and (min-width: $smallest) {
+		@content;
+	}
+}
+
+@mixin smallest-small {
+
+	@media screen and (min-width: $smallest-small) {
+		@content;
+	}
+}
+
+@mixin small {
+
+	@media screen and (min-width: $small) {
+		@content;
+	}
+}
+
+@mixin small-medium {
+
+	@media screen and (min-width: $small-medium) {
+		@content;
+	}
+}
+
+@mixin medium {
+
+	@media screen and (min-width: $medium) {
+		@content;
+	}
+}
+
+@mixin medium-large {
+
+	@media screen and (min-width: $medium-large) {
+		@content;
+	}
+}
+
+@mixin large {
+
+	@media screen and (min-width: $large) {
+		@content;
+	}
+}
+
+@mixin large-max {
+
+	@media screen and (min-width: $large-max) {
+		@content;
+	}
+}
+
+@mixin max {
+
+	@media screen and (min-width: $max) {
+		@content;
+	}
+}
+
+// BP flags
+
+@mixin bp-flag {
+
+	&:before {
+		background: $color-white;
+		bottom: 0;
+		color: $color-black;
+		content: '';
+		display: block;
+		font-size: 12px;
+		height: 2.8em;
+		line-height: 3em;
+		left: 0;
+		opacity: .5;
+		padding: 0 1em;
+		pointer-events: none;
+		position: fixed;
+		z-index: 99999;
+
+		@include smallest {
+			content: '$smallest / 320px';
+		}
+
+		@include smallest-small {
+			content: '$smallest-small / 400px';
+		}
+
+		@include small {
+			content: '$small / 480px';
+		}
+
+		@include small-medium {
+			content: '$small-medium / 624px';
+		}
+
+		@include medium {
+			content: '$medium / 768px';
+		}
+
+		@include medium-large {
+			content: '$medium-large / 896px';
+		}
+
+		@include large {
+			content: '$large / 1024px';
+		}
+
+		@include large-max {
+			content: '$large-max / 1132px';
+		}
+
+		@include max {
+			content: '$max / 1240px';
+		}
+	}
+}

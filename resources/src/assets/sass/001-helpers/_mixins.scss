@@ -1,0 +1,238 @@
+
+
+// Center layout
+// --------------------------------------------------
+
+@mixin center-element {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin vertical-center {
+	position: relative;
+ 	top: 50%;
+  	transform: translateY(-50%);
+}
+
+// Clearfix
+// --------------------------------------------------
+
+@mixin cf {
+
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.cf {
+
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Hidden
+// --------------------------------------------------
+
+@mixin hidden {
+	height: 1px;
+	left: -10000px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	width: 1px;
+}
+
+.hidden,
+.screen-reader-text {
+	@include hidden;
+}
+
+@mixin hide-text {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin invisible {
+	visibility: hidden;
+}
+
+@mixin visuallyhidden {
+	overflow: hidden;
+	position: absolute;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+
+	&.focusable {
+
+		&:active,
+		&:focus {
+			position: static;
+			clip: auto;
+			height: auto;
+			width: auto;
+			margin: 0;
+			overflow: visible;
+		}
+	}
+}
+
+.screen-reader-text {
+	@include visuallyhidden;
+}
+
+
+// zero / zero list
+// --------------------------------------------------
+
+@mixin zero {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin zero-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+// Typography
+// --------------------------------------------------
+
+// converts px to rem
+
+/*@mixin fs($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}*/
+
+@function calculate-rem($size) {
+	$rem-size: $size / 16px;
+	@return #{$rem-size}rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size; //Fallback in px
+	font-size: calculate-rem($size);
+}
+
+// allcaps
+
+@mixin allcaps {
+	@include font-size(11px);
+	font-family: $font-base-family;
+	font-weight: $font-base-weight-heavy;
+	letter-spacing: .15em;
+	text-transform: uppercase;
+}
+
+// Tint & shade
+// --------------------------------------------------
+
+// Add percentage of white to a color
+// usage: color: tint($colour,50%);
+
+@function tint($color, $percent) {
+	@return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+// usage: color: shade($colour,50%);
+
+@function shade($color, $percent) {
+	@return mix(black, $color, $percent);
+}
+
+
+// Columns
+// -------------------------------------------------
+
+// calculates the column width by getting the col-span, dividing that by the amount and multiplying by 100
+
+@function columns($column-span, $column-amount) {
+  @return ($column-span / $column-amount) * 100%;
+}
+
+
+// Transitions
+// --------------------------------------------------
+
+@mixin transition($args: all $transition-duration $transition-ease) {
+	-webkit-transition: $args;
+	-o-transition: $args;
+	transition: $args; 
+}
+
+
+// Rounded corners
+// --------------------------------------------------
+
+@mixin border-radius($radius: $border-radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;  
+}
+
+
+
+
+// Gradient
+// --------------------------------------------------
+
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+
+
+// Keyframes & Animation
+// ---------------------------------------------------
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @-o-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}
+
+@mixin animation($parameters) {
+    -webkit-animation: $parameters;
+    -moz-animation: $parameters;
+    -o-animation: $parameters;
+    animation: $parameters;
+}

@@ -1,0 +1,31 @@
+.banner{
+  width: 100%;
+  height: 80vh;
+  min-height: 450px;
+  position: relative;
+  background: url('../img/banner-home.jpg') center top no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  text-align: center;
+  position: relative;
+
+  .btn{
+    margin-top: 30px;
+    display: inline-block;
+  }
+}
+
+.banner__title{
+  color: $color-white;
+}
+
+@include medium{
+  
+  .banner{
+    @include font-size(18px);
+  }
+
+}

@@ -1,0 +1,11 @@
+/bootstrap/compiled.php
+/vendor
+/resources/node_modules
+!/resources/node_modules/jshint
+composer.phar
+composer.lock
+.env.php
+
+.DS_Store
+Thumbs.db
+.env.local.php

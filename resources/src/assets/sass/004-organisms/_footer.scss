@@ -1,0 +1,34 @@
+.footer{
+  width: 100%;
+  padding: 50px 15px;
+  background: $color-secondary;
+
+  a{
+    color: $color-white;
+  }
+}
+.footer__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column wrap;
+}
+.footer__logo{
+  flex: 0 0 34px;
+  margin-bottom: 30px;
+  
+  img{
+    height: 50px;
+  } 
+}
+.footer__nav{
+  flex: 1 1 auto;
+  text-align: right;
+}
+
+@include small-medium{
+  .footer{
+    padding: 20px 15px;
+  }
+
+}

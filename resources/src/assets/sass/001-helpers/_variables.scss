@@ -1,0 +1,116 @@
+
+// Variables
+// --------------------------------------------------
+
+// Brand
+
+$color-primary 					  : #e68f7b; // red	
+$color-primary-light 			: #FF9987;
+$color-primary-dark				: darken($color-primary, 5%);		
+
+$color-secondary 				  : #3E3B33;	// light grey
+$color-secondary-light 		: lighten($color-secondary, 10%);
+$color-secondary-dark	 		: darken($color-secondary, 5%);	
+
+$color-tertiary 				  : #F7F7F7;	// dark grey
+$color-tertiary-light 		: lighten($color-tertiary, 4%);
+$color-tertiary-dark	 		: darken($color-tertiary, 10%);		
+
+$color-action 					   : $color-primary;
+
+//Gradients
+
+$primary-gradient               : linear-gradient(to right, rgba(#732E9E, 0.51) 0%, rgba(#FA9000, 0.51) 100%); //purple to orange
+$secondary-gradient				: linear-gradient(top,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 100%); // dark black to light black
+
+  
+// Base
+
+$color-body						: #8C8B89;		// white
+$color-text						: #3E3B33;		// dark grey
+$color-text-light				: #8C8B89; 		// mid grey
+
+$color-flag 					: rgb(254,205,49);		// yellow
+
+// Links
+
+$color-link 		    		: $color-primary;
+$color-link-hover 				: lighten($color-link,30%);
+$color-link-visited   			: $color-link;
+$color-link-active 				: lighten($color-link,30%);
+$color-link-focus 				: lighten($color-link,30%);
+
+// Forms
+
+$color-form-background			: rgb(27,28,29);
+$color-form-border				: rgb(54,55,56);
+$color-form-border-hover		: rgb(69,69,70);
+$color-form-border-focus		: rgb(110,110,111);
+$color-form-content				: rgb(255,255,255);
+
+// Buttons
+
+$color-button					: rgb(54,55,56);
+$color-button-border			: rgb(22,23,24);
+$color-button-hover				: rgb(54,55,56);
+$color-button-active			: rgb(54,55,56);
+$color-button-focus				: rgb(54,55,56);
+
+// Misc.
+
+$color-neutral 					: #d6d6d6;
+$color-neutral-dark				: darken($color-neutral, 10%);
+$color-neutral-light			: #f6f6f6;
+
+$color-positive					: #dff0d8;		// green
+$color-warning					: #fcf8e3;		// orange
+$color-negative					: #f2dede;		// red
+$color-neutral-bg				: rgb(247,247,251); 	//neutral grey	
+
+// Borders
+
+$color-border 					: #8e9aab;
+$border-radius					: 2px;
+
+// B&W
+
+$color-black 					: #000000;
+$color-white 					: #ffffff;
+
+// Diagnostic
+
+$diag 							: rgba(255,0,0,.2);
+
+// Vertical rhythm
+
+$font-base-line-height 			: 1.28;
+
+// Base typeface
+// Note: Ensure the Google code is in the head of the document!
+
+
+$font-base-family 				: "Montserrat",sans-serif;
+$font-base-weight 				: 400; // regular
+$font-base-weight-heavy	  : 600; // bold
+
+// Headings
+
+$font-heading-family 			: "Merriweather", serif;
+$font-heading-weight			: 400; // heavy
+$font-heading-weight-heavy: 700; // heavy
+
+// Code / monospaced
+
+//$font-code-family				: Monaco, Courier New, monospace;
+
+// Transitions
+
+$transition-duration			: .2s;
+$transition-duration-fast		: .125s;
+$transition-duration-slow		: .5s;
+$transition-ease				: ease-in-out;
+
+
+$box-shadow-light				: 0px 0px 10px 0px rgba(84, 84, 84, 0.2);
+$box-shadow						: 0px 0px 20px 0px rgba(84, 84, 84, 0.2);
+$box-shadow-dark				: 0px 0px 20px 0px rgba(84, 84, 84, 0.5)

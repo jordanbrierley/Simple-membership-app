@@ -1,0 +1,41 @@
+.page{
+  background: $color-white;
+  padding-bottom: 20px;
+}
+.page__title{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  padding: 0 15px;
+  color: $color-primary;
+  
+  h1{
+    position: relative;
+
+    &:after{
+      content: "";
+      display: block;
+      width: 30px;
+      margin: 20px auto 0;
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+
+}
+.page__body{
+  padding: 25px 15px;
+}
+
+@include small-medium{
+  .page{
+    padding-bottom: 75px;
+  }
+  .page__title{
+    min-height: 230px;
+  }
+  .page__body{
+    padding: 50px 15px;
+  }
+}
