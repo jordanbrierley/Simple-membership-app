@@ -7,6 +7,9 @@ var options = {
 };
 
 var loadPlugins = require('gulp-load-plugins')({
+  rename: {
+    'jshint': 'jshint-exclude'
+  },
   pattern: ['*']
 });
 

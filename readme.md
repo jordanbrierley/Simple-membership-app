@@ -29,7 +29,7 @@ To secure members only images I have saved these outside the `/public` directory
 The filenames have been md5 hashed using their filename and a timestamp to give a unique code and protect the filename which is what we route through the `FileController`. The method also checks if the user is logged in and whether the user is a member before allowing the images to be viewed otherwise we direct them to the subscribe page.
 
 
-###Paypal
+### Paypal
 
 For the paypal payment I wasnt sure if you wanted live payments or just the sandbox however it can use both. You may need to get either a sandbox key or production key from [https://developer.paypal.com/developer/applications/braintreeCredentials/editbtcredLive](https://developer.paypal.com/developer/applications/braintreeCredentials/editbtcredLive), if you add this key in the env.local.php file for the `'PAYPAL_BRAINTREE_SDK_TOKEN'`.
 
