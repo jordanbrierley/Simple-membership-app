@@ -4,6 +4,8 @@ class UserTableSeeder extends Seeder {
 
   public function run()
   {
+    Eloquent::unguard();
+    
     DB::table('users')->delete();
 
     $user = User::create(array(

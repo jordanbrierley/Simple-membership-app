@@ -4,6 +4,8 @@ class FilesTableSeeder extends Seeder {
 
   public function run()
   {
+    Eloquent::unguard();
+    
     DB::table('files')->delete();
 
     $files = [
