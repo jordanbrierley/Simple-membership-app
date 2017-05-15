@@ -15,7 +15,7 @@ If you clone this into your directory and run `composer update` to install all t
 To build the assets if you first navigate to the `/resources` folder in the document root and run `npm install` to install all the package dependancies
 Then you can then run `gulp build` which will run the build process to compile these in the `/public` folder on the document root.
 
-You can 'watch' these assets and view to update and compile with live reloading by running `gulp` from the `/resources` directory just be sure to make sure to run `php artisan serve --host HOSTNAME` where `HOSTNAME` matches the value set in `/resources/gulp/conf Line:14 - exports.proxy = 'HOSTNAME:PORT';`.
+You can 'watch' these assets to update and compile with live reloading by running `gulp` from the `/resources` directory as long as you make sure to run `php artisan serve --host HOSTNAME` where `HOSTNAME` matches the value set in `/resources/gulp/conf Line:14 - exports.proxy = 'HOSTNAME:PORT';`.
 
 eg. `php artisan serve --host animals.dev`, `exports.proxy = 'http://animals.dev:8000';`
 
@@ -24,9 +24,9 @@ I've included a sample `.env.sample.php` as an example although this shouldn't r
 
 
 ### Securing members only images
-To secure members only images I have saved these outside the `/public` directory in the `/app/storage/resources` directory so they can't be accessed directly. I then routed these through a controller using the `auth` filter with a custom `member` filter so when this is access it first check if the user is logged in, if this then passes it checks against the `member` filter to see if the logged in user is a member. 
+To secure members only images I have saved these outside the `/public` directory in `/app/storage/resources`so they can't be accessed directly. I then routed these through a controller using the `auth` filter with a custom `member` filter which will allow us to reuse this for future development so when this is access it first check if the user is logged in, if this then passes it checks against the `member` filter to see if the logged in user is a member. 
 
-The filenames have been md5 hashed using their filename and a timestamp to give a unique code and protect the filename which is what we route through the `FileController`. The method also checks if the user is logged in and whether the user is a member before allowing the images to be viewed otherwise we direct them to the subscribe page.
+The filenames have been md5 hashed using their filename and a timestamp to give a unique code and protect the filename which is what we route through the `FileController`. The method also checks if the user is logged in and whether the user is a member before allowing the images to be viewed otherwise we redirect them to the subscribe page.
 
 
 ### Paypal
