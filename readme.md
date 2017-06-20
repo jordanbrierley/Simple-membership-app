@@ -1,6 +1,6 @@
 ## Simple application with subscription service using paypal to become a member to view secure images
 
-Details of how to install and compile assets below
+Details of how to install and compile assets below, based on laravel 4.2
 
 If you clone this into your directory and run `composer update` to install all the necessary packages for the application
 
